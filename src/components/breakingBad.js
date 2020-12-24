@@ -6,6 +6,8 @@ import Searchbar from "./searchbar";
 
 const useStyles = makeStyles({
   root: { width: "100vw", height: "100vh", backgroundColor: "#cfd3ce" },
+  topbar: { marginLeft: "20%", position: "relative", top: "12px" },
+  table: { marginLeft: "20%", marginTop: "24px" },
 });
 export default function BreakingBad() {
   const classes = useStyles();
@@ -15,11 +17,11 @@ export default function BreakingBad() {
   return (
     <>
       <div className={classes.root}>
-        <div style={{ marginLeft: "20%", position: "relative", top: "12px" }}>
+        <div className={classes.topbar}>
           <Searchbar setSearch={setSearch} />
         </div>
 
-        <div style={{ marginLeft: "20%", marginTop: "24px" }}>
+        <div className={classes.table}>
           <CharacterList search={search} />
         </div>
       </div>

@@ -31,6 +31,14 @@ const useStyles = makeStyles({
     width: "180px",
     marginTop: "5px",
   },
+  closeIcon: {
+    cursor: "pointer",
+  },
+  grid1: {
+    marginLeft: "40px",
+  },
+  filterButton: { marginTop: "5px" },
+  closeIcon2: { marginLeft: "4px" },
 });
 export default function Searchbar({ setSearch }) {
   const classes = useStyles();
@@ -64,7 +72,7 @@ export default function Searchbar({ setSearch }) {
               InputProps={{
                 endAdornment: name ? (
                   <CloseIcon
-                    style={{ cursor: "pointer" }}
+                    className={classes.closeIcon}
                     onClick={() => {
                       setName("");
                       setSearch((e) => ({ ...e, name: null }));
@@ -86,10 +94,10 @@ export default function Searchbar({ setSearch }) {
               Search
             </Button>
           </Grid>
-          <Grid item style={{ marginLeft: "40px" }}>
+          <Grid item className={classes.grid1}>
             <Button
               variant="outlined"
-              style={{ marginTop: "5px" }}
+              className={classes.filterButton}
               onClick={() => {
                 if (filterOpen) setCategory("");
                 setFilterOpen(!filterOpen);
@@ -98,7 +106,7 @@ export default function Searchbar({ setSearch }) {
               <FilterListIcon /> Filter{" "}
               {category ? (
                 <CloseIcon
-                  style={{ marginLeft: "4px" }}
+                  className={classes.closeIcon2}
                   onClick={() => setSearch((e) => ({ ...e, category: null }))}
                 />
               ) : null}

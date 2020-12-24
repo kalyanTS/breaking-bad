@@ -34,6 +34,7 @@ const useStyles = makeStyles({
     width: "80%",
     height: "500px",
   },
+  pagination: { margin: "auto" },
 });
 
 const columnHeadingList = ["Name", "Occupation", "Date of Birth", "Status"];
@@ -136,7 +137,7 @@ export default function CharacterList({ search }) {
             variant="outlined"
             color="primary"
             page={pageNo}
-            style={{ margin: "auto" }}
+            className={classes.pagination}
             onChange={(e, value) => setPageNo(value)}
           />
         </div>
